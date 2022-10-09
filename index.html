@@ -4,42 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="javascript.js"></script>
     <title>Recruitment Form</title>
 </head>
 <body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
     <h1>Sign Up Here</h1>
-    <form>
+    <form  name="regform" onsubmit="return false" >
 
     <div>
     <p>Name:</p>
     <p><input type="text" size="50" name="Name" placeholder="Name"></p>
     </div>
 
-    <div>       
-    <p>Address:</p>
-    <p><input type="text" size="50" name="Address" placeholder=" Address" ></p>
-    </div>
-
     <div>        
     <p>E-mail Address:
-    <p><input type="text" size="50" name="E-Mail" placeholder=" Email"/></p>
+    <p><input type="text" size="50" name="EMail" placeholder=" Email"/></p>
     </div>
             
     <div>
     <p>Password:</p>
-    <input type="text" size="50" name="Password" placeholder=" Password"></p>
+    <p><input type="password" size="50" name="Password1" placeholder=" Password"></p>
+    <h6>Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters<h6>
     </div>
 
     <div>
     <p>Confirm Password:</p>
-    <p><input type="text" size="50" name="Password" placeholder=" Confirm Password"></p>
+    <p><input type="password" size="50" name="Password2" placeholder=" Confirm Password"></p>
     </div> 
     <div>      
     <p>Mobile Number:</p>
-    <p><input type="text" size="50" name="Mobile Number" placeholder=" Mobile Number"></p>
+    <p><input type="text" size="50" name="MobileNumber" placeholder=" Mobile Number"></p>
     </div>
-    <div>
+    <div class="gender" id="gender">
         Gender :
         <input type="radio" id="Male" name="Gender" value="Male">
         <label for="Male">Male</label>
@@ -48,7 +50,7 @@
         <input type="radio" id="Others" name="Gender" value="Others">
         <label for="Others">Others</label>
     </div>   
-    <p><input type="submit" value="Sign Up" name="Sign Up" ></p>
+    <div class="b1"><input type="submit" value="Sign Up" name="Sign Up" onclick="validationf()"></div>
     </form>
 </body>
 
