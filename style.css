@@ -4,40 +4,15 @@ body{
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.background{
-    width: 430px;
-    height: 520px;
-    position: absolute;
-    /* transform: translate(-50%,-50%); */
-    left: 50%;
-    top: 50%;
-}
-.background .shape{
-    height: 170px;
-    width: 170px;
-    position: relative;
+.shape{
+    height: 150px;
+    width: 150px;
     border-radius: 10%;
-}
-.shape:first-child{
-    background: linear-gradient(
-        #1845ad,
-        #23a2f6
-    );
-    left: -19rem;
-    top: -20rem;
-}
-.shape:last-child{
-    background: linear-gradient(
-        to right,
-        #ff512f,
-        #f09819
-    );
-    right: -8rem;
-    bottom: -15rem;
 }
 
 form{
-    margin: 3rem 33rem;
+    position: relative;
+    margin: 0rem 33rem;
     padding: 2rem;
     background-color: rgba(255,255,255,0.10);
     border-radius: 10px;
@@ -45,7 +20,25 @@ form{
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
 }
-
+#shape1{
+    background: linear-gradient(
+        #1845ad,
+        #23a2f6
+    );
+    position: absolute;
+    left: 30rem;
+    top: 2rem;
+}
+#shape2{
+    background: linear-gradient(
+        to right,
+        #ff512f,
+        #f09819
+    );
+    position: absolute;
+    left: 56rem;
+    top: 48rem;
+}
 p {
 text-align: left;
 }
@@ -69,4 +62,21 @@ h6{
     font-weight:100 ;
     text-align: left;
     margin:-2px 2px ;
+}
+@media only screen and (max-width:1280px) {
+    form{
+        margin:3rem;
+    }
+    input{
+        width: 90%;
+    }
+    .gender input{
+        width:auto;
+    }
+    #shape1{
+        display: none;
+    }
+    #shape2{
+       display: none;
+    }
 }
