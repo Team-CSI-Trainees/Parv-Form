@@ -1,4 +1,8 @@
 
+function green(var1,var2){
+    document.getElementById(var1).style.border=" none ";
+    document.getElementById(var2).style.display="none";
+}
 function validationf() {
     var name = document.forms.regform.Name.value;
     var email = document.forms.regform.EMail.value;
@@ -8,36 +12,46 @@ function validationf() {
     var regEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
     var regPhone=/^\d{10}$/;                                       
     var regName = /^[a-zA-Z ]+$/; 
-    var regpass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
-    
-    if (name == !regName.test(name)) {
-        alert("Please enter your name properly.");
-        return false;
+    var regpass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,20}$/;
+    var error=false;
+    if (name == "" || !regName.test(name)) {
+        document.getElementById("Name").style.border= "2px solid rgb(138,0,0)";
+        document.getElementById("nameerror").style.display="block";
+        error=true;
     }
                  
     if (email == "" || !regEmail.test(email)) {
-        alert("Please enter a valid e-mail address.");
-        return false;
+        document.getElementById("Email").style.border= "2px solid rgb(138,0,0)";
+        document.getElementById("emailerror").style.display="block";
+        error=true;
     }
                   
-    if (password1 == " " || !regpass.test(password1) ) {
-        alert("Please enter your password in correct format");
-        return false;
+     if (password1 == " " || !regpass.test(password1) ) {
+        document.getElementById("Password1").style.border= "2px solid rgb(138,0,0)";
+        document.getElementById("pass1error").style.display="block";
+        error=true;
     }
  
-    if(password1!=password2){
-        alert("Password and Confirm Password must be same");
-        return false;
+     if(password1!=password2){
+        document.getElementById("Password2").style.border= "2px solid rgb(138,0,0)";
+        error=true;
+        document.getElementById("pass2error").style.display="block";
     }
      if (MobileNumber == "" || !regPhone.test(MobileNumber)) {
-        alert("Please enter valid phone number.");
+        document.getElementById("MobileNumber").style.border= "2px solid rgb(138,0,0)";
+        error=true;
+        document.getElementById("moberror").style.display="block";
+    }
+     if(!document.forms.regform.Gender.value){
+        document.getElementById("generror").style.display="block";
+        error=true;
+    }
+    if(!error){
+    alert("Form Submitted Succesfully");
+    console.log("Name-",name,"email-",email,"Mobile No.-",MobileNumber);    
+    return true;
+    }
+    else{
         return false;
     }
-    if(!document.forms.regform.Gender.value){
-        alert("Select gender first");
-        return false;  
-    }
-    alert("Form Submitted Succesfully");
-    console.log("Name-",name,"email-",email,"Mobile No.-",MobileNumber,"Password-",password1);          
-    return true;
 }

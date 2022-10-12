@@ -22,15 +22,17 @@ form{
 }
 
 p {
+margin: 0.5rem 0rem;
 text-align: left;
 }
 .gender {
     text-align: left;
 }
 input{
+    color: aliceblue;
     background-color: rgba(0,0,0,0.6);
     border: none;
-    padding: 1rem;
+    padding: 1rem 0.6rem;
     border-radius: 5px;
 }
 .b1 {
@@ -41,12 +43,23 @@ input{
     border-radius: 5px;
 }
 .b1 input {
+    font-weight:bold ;
+    color:black;
     background-color: white;
 }
 h6{
-    font-weight:100 ;
+    color:white;
+    font-weight:300 ;
     text-align: left;
     margin:-2px 2px ;
+}
+span.error{
+    font-size: 1rem;
+    color:rgb(138, 0, 0);
+    display: none;
+}
+div.Gender{
+    margin: 1rem 0rem;
 }
 @media only screen and (max-width:1280px) {
     form{
